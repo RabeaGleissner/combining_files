@@ -12,4 +12,4 @@ Style/FrozenStringLiteralComment:
 Style/WordArray:
   Enabled: false
 Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'context']
+  IgnoredMethods: ['describe', 'context', 'it']
