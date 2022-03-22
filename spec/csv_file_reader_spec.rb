@@ -2,7 +2,7 @@ require "csv_file_reader"
 require "models/article"
 require "models/journal"
 
-describe CSVFileReader do
+describe CsvFileReader do
   let(:file_path) { "test.csv" }
   after(:each) { File.delete(file_path) }
 
@@ -22,7 +22,7 @@ describe CSVFileReader do
     ]
     create_test_csv(rows)
 
-    articles = CSVFileReader.read_and_create(file_path, Article)
+    articles = CsvFileReader.read_and_create(file_path, Article)
 
     expect(articles.length).to eq(2)
     expect(articles.first.doi).to eq("doi1")
@@ -40,7 +40,7 @@ describe CSVFileReader do
     ]
     create_test_csv(rows)
 
-    articles = CSVFileReader.read_and_create(file_path, Journal)
+    articles = CsvFileReader.read_and_create(file_path, Journal)
 
     expect(articles.length).to eq(1)
     expect(articles.first.title).to eq("title1")
