@@ -1,6 +1,5 @@
 require_relative "lib/args_parser"
 require_relative "lib/input_validator"
-require_relative "lib/csv_file_reader"
 require_relative "lib/program"
 
 parser = ArgsParser.new(ARGV)

@@ -1,4 +1,4 @@
-require "csv_file_reader"
+require "file_readers/csv_file_reader"
 require "models/article"
 require "models/journal"
 

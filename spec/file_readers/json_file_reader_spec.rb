@@ -1,5 +1,5 @@
 require "json"
-require "json_file_reader"
+require "file_readers/json_file_reader"
 require "models/author"
 
 describe JsonFileReader do
