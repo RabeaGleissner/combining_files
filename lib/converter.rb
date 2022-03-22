@@ -4,11 +4,10 @@ class Converter
   end
 
   def convert(combinations)
-    hash_array = combinations.map(&:to_h)
     if data_type == "json"
-      JSON.generate(hash_array)
+      JSON.generate(combinations.map(&:to_h))
     else
-      convert_to_csv(hash_array)
+      convert_to_csv(combinations.map(&:to_h))
     end
   end
 
