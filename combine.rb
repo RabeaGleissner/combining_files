@@ -6,8 +6,8 @@ require_relative "lib/program"
 parser = ArgsParser.new(ARGV)
 
 unless InputFileValidator.files_valid?(parser.files_to_combine)
-  puts ">> Sorry, your file selection does not match up with the available files.
-  Please double-check your command and only use available files."
+  puts "Sorry, your file selection does not match up with the available files. Please double-check your command."
+  exit
 end
 
 puts Program.run(parser.output_file_format)
