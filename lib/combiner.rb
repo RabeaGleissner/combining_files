@@ -1,4 +1,4 @@
-require "models/combination"
+require_relative "models/combination"
 
 class Combiner
   def self.combine(articles, journals, authors)

@@ -1,4 +1,4 @@
-require "issn_formatter"
+require_relative "../issn_formatter"
 
 class Article
   attr_reader :doi, :title, :issn

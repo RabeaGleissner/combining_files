@@ -21,8 +21,7 @@ describe Converter do
 
     output = converter.convert(input)
 
-    # rubocop:disable Layout/LineLength
-    expect(output).to eq("DOI,Article title,Journal ISSN,Author name,Journal title\ndoi1,article title 1,1111-1111,author name 1,journal title 1\n")
-    # rubocop:enable Layout/LineLength
+    expect(output).to eq("DOI,Article title,Journal ISSN,Author name,Journal title
+doi1,article title 1,1111-1111,author name 1,journal title 1\n")
   end
 end
