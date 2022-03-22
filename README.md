@@ -1,5 +1,45 @@
 # Programming Exercise
 
+## How to run the code
+
+Clone the code and run
+
+`bundle install`
+
+Run the tests: 
+
+`rspec`
+
+Run the linter:
+
+`rubocop`
+
+Generate the combined data files:
+
+`ruby combine.rb --format json journals.csv articles.csv authors.json > full_articles.json`
+`ruby combine.rb --format csv journals.csv articles.csv authors.json > full_articles.csv`
+
+
+## Considerations
+
+1) Files to combine
+
+The program currently only combines the three existing files in the `/resources` directory.
+However, I noticed that the file names are being passed as part of the command to run the program.
+That made me wonder if this program should be able to combine any given files.
+I decided for now not to accomodate for this case because it would make the program lot more complex.
+But I wanted to call out that this struck me as a possibility!
+This would be something that I would clarify with a product manager first.
+
+2) ISSN formatting
+
+The instructions say that sometimes the ISSN can be missing a hyphen.
+I coded for exactly that eventuality, assuming that it will always have the right format - so either two sets of four digits with a hyphen or eight digits.
+If there was ever a data file with an ISSN in a different format, no errors would be thrown currently, although I think that might be a good idea for an actual production usecase! 
+
+
+## Instructions
+
 In the resources directory, you'll find three data files:
 
 * journals.csv: a list of journal titles and ISSNs;
