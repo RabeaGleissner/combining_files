@@ -1,4 +1,7 @@
 require "combiner"
+require "models/article"
+require "models/journal"
+require "models/author"
 
 describe Combiner do
   it "combines articles, authors and journals" do
@@ -15,9 +18,9 @@ describe Combiner do
     ]
 
     authors = [
-      Author.new("author name 1", "doi1"),
-      Author.new("author name 2", "doi2"),
-      Author.new("author name 3", "doi3")
+      Author.new("author name 1", ["doi1", "doi4"]),
+      Author.new("author name 2", ["doi5", "doi2"]),
+      Author.new("author name 3", ["doi3"])
     ]
 
     combination = Combiner.combine(articles, journals, authors)
@@ -58,8 +61,8 @@ describe Combiner do
     ]
 
     authors = [
-      Author.new("author name 1", "doi1"),
-      Author.new("author name 2", "doi2")
+      Author.new("author name 1", ["doi1"]),
+      Author.new("author name 2", ["doi2"])
     ]
 
     combination = Combiner.combine(articles, journals, authors)

@@ -1,8 +1,8 @@
 class Author
-  attr_reader :name, :doi
+  attr_reader :name, :articles
 
-  def initialize(name, doi)
+  def initialize(name, articles)
     @name = name
-    @doi = doi
+    @articles = articles
   end
 end

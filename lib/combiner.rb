@@ -14,7 +14,7 @@ class Combiner
   end
 
   def self.find_author_name(article, authors)
-    authors.find { |author| author.doi == article.doi }&.name || ""
+    authors.find { |author| author.articles.include?(article.doi) }&.name || ""
   end
 
   def self.find_journal_title(article, journals)

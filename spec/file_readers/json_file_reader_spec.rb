@@ -14,8 +14,8 @@ describe JsonFileReader do
 
   it "converts json data into an array of authors" do
     data = [
-      { name: "Name 1", doi: "doi1" },
-      { name: "Name 2", doi: "doi2" }
+      { name: "Name 1", articles: ["doi1"] },
+      { name: "Name 2", articles: ["doi2"] }
     ]
     create_test_json(data)
 
@@ -23,8 +23,8 @@ describe JsonFileReader do
 
     expect(authors.length).to eq(2)
     expect(authors.first.name).to eq("Name 1")
-    expect(authors.first.doi).to eq("doi1")
+    expect(authors.first.articles).to eq(["doi1"])
     expect(authors.last.name).to eq("Name 2")
-    expect(authors.last.doi).to eq("doi2")
+    expect(authors.last.articles).to eq(["doi2"])
   end
 end
